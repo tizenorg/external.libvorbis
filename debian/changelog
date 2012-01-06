@@ -1,0 +1,8 @@
+libvorbis (1.2.3-5slp4) unstable; urgency=low
+
+  * Initial Release.
+  * Git: unmodified/libvorbis
+  * Tag: libvorbis_1.2.3-5slp4
+
+ -- Hyunseok Lee <hs7388.lee@samsung.com>  Wed, 07 Dec 2011 11:38:49 +0900
+
