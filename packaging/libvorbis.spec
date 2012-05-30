@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    BSD
 URL:        http://www.xiph.org/
 Source0:    http://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
+Source1001: packaging/libvorbis.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(ogg)
@@ -25,6 +26,7 @@ Description: %{summary}
 %setup -q -n %{name}-%{version}
 
 %build
+cp %{SOURCE1001} .
 
 %configure --disable-static
 make %{?jobs:-j%jobs}
@@ -39,11 +41,13 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest libvorbis.manifest
 %{_libdir}/libvorbis.so.*
 %{_libdir}/libvorbisfile.so.*
 %{_libdir}/libvorbisenc.so.*
 
 %files devel
+%manifest libvorbis.manifest
 %{_includedir}/vorbis
 %{_libdir}/libvorbis.so
 %{_libdir}/libvorbisfile.so
