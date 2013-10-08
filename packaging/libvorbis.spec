@@ -31,6 +31,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
 %make_install
 rm -rf $RPM_BUILD_ROOT%{_docdir}
 
@@ -43,6 +45,7 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %{_libdir}/libvorbis.so.*
 %{_libdir}/libvorbisfile.so.*
 %{_libdir}/libvorbisenc.so.*
+/usr/share/license/%{name}
 
 %files devel
 %{_includedir}/vorbis
