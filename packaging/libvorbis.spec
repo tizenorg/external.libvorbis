@@ -2,7 +2,7 @@
 Name:       libvorbis
 Summary:    The Vorbis General Audio Compression Codec
 Version:    1.2.3
-Release:    4
+Release:    3
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.xiph.org/
@@ -55,3 +55,4 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %{_libdir}/libvorbisenc.so
 %{_libdir}/pkgconfig/*.pc
 %{_datadir}/aclocal/vorbis.m4
+
